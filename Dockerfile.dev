@@ -1,0 +1,11 @@
+FROM golang:1.18.1-bullseye
+
+WORKDIR /go/src/refurbed/assignment
+
+RUN apt-get update
+
+COPY . .
+
+RUN go install ./...
+
+CMD tail -f /dev/null
